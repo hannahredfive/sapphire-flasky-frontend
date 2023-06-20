@@ -46,16 +46,25 @@ function App() {
     // create a new list of animals with updated bookmark value
     const updatedAnimals = animals.map(animal => {
       if (animal.id === animalId) {
-        animal.isBookmarked = !animal.isBookmarked;
+        // let animal2 = { ...animal };
+        // animal2.isBookmarked = !animal.isBookmarked;
+        // return animal2;
+
+        // The above is the same as the below
+
+        return {
+          ...animal,
+          isBookmarked: !animal.isBookmarked
+        }
       };
-      return {...animal}
+      return animal;
     });
 
     setAnimals(updatedAnimals);
   }
 
   const updateDelete = (animalId) => {
-    const updatedAnimals = animals.map((animal) => {
+    const updatedAnimals = animals.map(animal => {
       if (animal.id !== animalId) {
         return { ...animal };
       }
