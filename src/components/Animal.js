@@ -22,7 +22,7 @@ const Animal = (props) => {
         animalStyle = 'Animal bookmarked';
     }
 
-    const toggleDelete = () => {
+    const updateButtonDelete = () => {
         console.log("toggle Delete is called!")
         props.updateDelete(props.id)
     }
@@ -34,7 +34,7 @@ const Animal = (props) => {
         <h3>Name: { props.name }</h3>
         <p>Species: { props.species }</p>
         <button onClick={toggleBookmark} className="bookmark-button">🌟 Bookmark</button>
-        <button onClick={toggleDelete} className="delete-button">🐶 Delete </button>
+        <button onClick={updateButtonDelete} className="delete-button">🐶 Delete </button>
     </section>);
 };
 
